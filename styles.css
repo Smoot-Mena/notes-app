@@ -1,0 +1,214 @@
+/*=============== 
+      Global Settings 
+================*/
+
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Dark Mode Button */
+
+#darkmode-checkbox {
+    position: fixed;
+    top: 1vh;
+    right: 1vw;
+}
+  
+#darkmode {
+    position: absolute;
+    font-weight: bold;
+    top: 3.4vh;
+    right: 25vw;
+}
+
+.switch {
+    position: fixed;
+    top: 3.25vh;
+    right: 22vw;
+    display: inline-block;
+    width: 40px;
+    height: 21px;
+}
+  
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #bebebe;
+    transition: .4s;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+}
+  
+input:checked + .slider {
+    background-color: #05aad3;
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px #0086af;
+}
+  
+input:checked + .slider:before {
+    transform: translateX(19px);
+}
+  
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Notes Settings */
+
+.notes {
+    display: flex;
+    height: 100%;
+}
+
+.notes * {
+    font-family: "Quicksand", "Century Gothic", "Arial", "Helvetica", sans-serif;
+}
+
+.notes__sidebar {
+    border-right: .5rem solid #bebebe;
+    flex-shrink: 1;
+    overflow-y: auto;
+    padding: 1vw;
+    width: 20vw;
+    min-width: 165px;
+}
+
+.notes__add {
+    background: #05aad3;
+    border: 5px solid #0086af;
+    border-radius: 20px;
+    color: snow;
+    cursor: pointer;
+    font-size: 1.7em;
+    font-weight: bold;
+    margin-bottom: 1vh;
+    padding: 1.5vh 0;
+    width: 100%;
+    max-width: 255px;
+}
+
+.notes__add:hover {
+    background: #0086af;
+}
+
+.notes__list-item {
+    cursor: pointer;
+}
+
+.notes__list-item:nth-of-type(even) {
+    background-color: #97daee;
+    border-radius: 20px;
+}
+
+.notes__list-item--selected {
+    border: 2px solid #05aad3;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.notes__small-title,
+.notes__small-updated {
+    padding: 1vh .5vw;
+}
+
+.notes__small-title {
+    font-size: 1.5em;
+}
+
+.notes__small-body {
+    padding: 0 1vw;
+}
+
+.notes__small-updated {
+    color: #0086af;
+    font-style: italic;
+    text-align: right;
+}
+.notes__preview {
+    display: flex;
+    flex-direction: column;
+    padding: 2vh 1vw;
+    flex-grow: 1;
+    min-width: 635px;
+}
+
+.notes__title,
+.notes__body {
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.notes__title {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.notes__body {
+    flex-grow: 1;
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin-top: 3vh;
+    resize: none;
+}
+
+/*==================
+    Dark Mode Settings
+==================*/
+
+.dark-mode,
+.dark-mode > nav,
+.dark-mode > #app > .notes__preview > .notes__title,
+.dark-mode > #app > .notes__preview > .notes__body {
+    color: snow;
+    background-color: rgb(32, 32, 32);
+}
+
+.dark-mode > #app > .notes__sidebar > .notes__list > .notes__list-item:nth-of-type(even) {
+    background-color: #0086af;
+}
+
+.dark-mode > #app > .notes__sidebar > .notes__list > .notes__list-item >.notes__small-updated {
+    color: #97daee;
+}
+
+/*=====END OF FILE!!!=====*/
